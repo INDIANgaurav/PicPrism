@@ -1,28 +1,39 @@
- 
+import ImageCards from "./ImageCards";
+import { FaShoppingCart } from "react-icons/fa";
+import { IoIosHeart } from "react-icons/io";
 const PhotoGallery = () => {
   return (
-    <div className="my-20 bg-white flex flex-col justify-center item-center">
+    <div className="my-20 bg-white flex flex-col justify-center items-center">
       <h3 className="text-3xl font-semibold my-14">Photos</h3>
-      <div>
-        <div className="rounded-lg bg-white shadow-lg p-2">
-
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-20 ">
         {/* image card */}
-        <div className="w-full h-[200px] overflow-hidden rounded-2xl" >
-          <img src="https://images.pexels.com/photos/12984738/pexels-photo-12984738.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="asset"
-          className="w-full h-full hover:scale-105 transition-all ease-linear duration-300 transform cursor-pointer "
-          />
-
-        </div>
-        <p className="font-semibold text-white bg-black w-fit px-5 py-1 rounded-full text-sm mt-3"> @GauravParasar</p>
+        <ImageCards
+          title="The beach"
+          author="gaurav"
+          img="https://images.pexels.com/photos/12984738/pexels-photo-12984738.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+          price={10}
+          icn1={
+            <FaShoppingCart className="text-2xl text-black cursor-pointer hover:scale-110 transition-all ease-linear duration-300" />
+          }
+          icn2={
+            <IoIosHeart className="text-2xl text-red-500 cursor-pointer hover:scale-110 transition-all ease-linear duration-300" />
+          }
+        />
+        <ImageCards
+          title="The Tree"
+          author="John"
+          img="https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=600"
+          price={12}
+          icn1={
+            <FaShoppingCart className="text-2xl text-black cursor-pointer hover:scale-110 transition-all ease-linear duration-300" />
+          }
+          icn2={
+            <IoIosHeart className="text-2xl text-red-500 cursor-pointer hover:scale-110 transition-all ease-linear duration-300" />
+          }
+        />
       </div>
-          </div>
-        <div>
-          <div>
-            <h3 className="">The Beach</h3>
-          </div>
-        </div>
     </div>
-  )
-}
+  );
+};
 
-export default PhotoGallery
+export default PhotoGallery;

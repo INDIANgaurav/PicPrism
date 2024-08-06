@@ -4,11 +4,10 @@ const app = express();
 const dotenv = require("dotenv");
 const { readdirSync } = require("fs");
 const { connectDb } = require("./connection");
+
 const PORT = process.env.PORT || 5000;
 dotenv.config()
 connectDb();
-app.use(express.json()) ;
-// app.use(cors())
 
 app.get("/", (req, res) => {
   res.send({ message: "server is working" });
