@@ -10,11 +10,11 @@ const signup = async (req, res) => {
   const { username, email, password, accountType } = req.body;
 
   try {
-    let user = await User.findOne({ username });
+    let user = await User.findOne({ email });
     if (user) {
       return res.status(400).json({
         success: false,
-        message: "username already exist",
+        message: "email already exist",
       });
     }
     const securePass = await bcrypt.hash(password, 10);

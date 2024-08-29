@@ -9,7 +9,7 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [accountType, setAccountType] = useState("");
-
+  // console.log("account type from signup ->" , accountType)
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
@@ -29,17 +29,14 @@ const Signup = () => {
         navigate("/login");
       }
     } catch (error) {
-      toast.error(error.message.data.message);
+      toast.error(error.message);
     }
   };
 
   return (
     <div className="mt-20 sm:mt-10 min-h-screen flex items-center justify-center w-full">
       <div className="bg-white shadow-md rounded-3xl px-5 py-6 w-full sm:w-[27vw] ">
-        <h1 className="text-2xl font-bold text-center mb-4 ">
-          {" "}
-          Let's Connect!
-        </h1>
+        <h1 className="text-2xl font-bold text-center mb-4 "> Lets Connect!</h1>
         <form onSubmit={handleSignup}>
           {/* username */}
           <div className="mb-4">
